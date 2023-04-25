@@ -1,4 +1,4 @@
-// teste
+
 var n = 5660
 
 var n60 = (n/60)
