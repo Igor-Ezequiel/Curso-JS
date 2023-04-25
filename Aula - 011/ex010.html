@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+</head>
+<body>
+        <h1>Sistema de Multas</h1>
+        
+         <input type="number" name="txtvel" id="txtvel"> km/h
+        <input type="number" name="txtvel2" id="txtvel2"> km/h
+        <input type="button" value="resultado" onclick="calcular()" onmouseenter="entrar()">
+        <input type="button" value="soma" onclick="soma()">
+        <input type="button" value="Subtração" onclick="subtração()" onmouseenter="subtração()">
+        <div id="resultado">
+            resultado:
+        </div>
+
+
+        <script>
+                
+                var txtv = window.document.getElementById('txtvel')
+                var txtv1 = window.document.getElementById('txtvel2')
+                var res = window.document.querySelector('div#resultado')
+                
+ 
+            function calcular() {
+
+                var vel = Number(txtv.value)
+                var vel1 = Number(txtv1.value)
+                
+                res.innerHTML = `<p> Sua velocidade atual é de <strong>${vel}</strong> km/h </p>`
+                
+                if (vel > 60 && vel1 <= 100) {
+                    
+                    res.innerHTML += `<p> Você está <strong>multado!</strong>`
+                
+                } else { 
+                    
+                        res.innerHTML += `<p> Você está dentro da lei!`
+                }
+                
+                res.innerHTML = `<p> Dirija sempre com cinto de segurança! </p>`
+            }
+
+            function entrar() {
+                
+                txtv.style.background = 'red'
+                txtv1.style.background = 'Blue'
+
+
+            }
+
+            function soma () {
+
+              var n1 = Number(txtv.value)  
+              var n2 = Number(txtv1.value)
+
+              var s = n1 + n2
+
+              res.innerHTML = `soma: ${s}`
+
+            }
+
+            function subtração() {
+                
+                var n1 = Number(txtv.value)  
+                var n2 = Number(txtv1.value)
+                
+                var s = n1 - n2
+
+                res.innerHTML = `Subtração: ${s}`
+                txtv.style.background = 'green'
+
+
+
+            }
+
+
+
+        </script>
+    
+</body>
+</html>

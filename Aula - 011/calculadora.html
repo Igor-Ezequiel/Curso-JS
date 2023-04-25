@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+
+    <h1>
+        Calculadora:
+    </h1>
+
+    <br> <input type="button" value="ligar/desligar" onclick="stop()" > </br>
+    <input type="number" id="txt1">
+    <input type="number" id="txt2">
+    <input type="button" value="+" onclick="somar()" >
+    <input type="button" value="-" onclick="dimi()" >
+    <input type="button" value="*" onclick="mult()" >
+    <input type="button" value="/" onclick="divi()" >
+    <input type="button" value="raiz" onclick="raiz()" id="txt3">
+
+    <div id="desligada">
+        calculadora desligada
+    </div>
+
+
+    <script>
+        
+        var txt = window.document.getElementById('txt1')
+        var tx2 = window.document.getElementById('txt2')
+        var des = window.document.getElementById('desligada')
+        var tx3 = window.document.getElementById('txt3')
+        var tx4 = window.document.getElementById('vida')
+       
+        function soma () {
+        
+        var n1 = Number(txt.value)
+        var n2 = Number(tx2.value)
+
+        var s = Number(n1 + n2)
+        des.innerHTML = `Resultado: Soma de ${n1} e ${n2} = ${s}`
+        
+        }
+        
+        function dimi () {
+
+        var n1 = Number(txt.value)
+        var n2 = Number(tx2.value)
+
+        var s = n1 - n2
+        des.innerHTML = `Resultado: Diferença de ${n1} e ${n2} = ${s}`
+        
+        }
+
+        function mult() {
+
+        var n1 = Number(txt.value)
+        var n2 = Number(tx2.value)
+
+        var s = n1 * n2
+        des.innerHTML = `Resultado: Multiplicação de ${n1} e ${n2} = ${s}`
+       
+        }
+
+
+        function divi() {
+
+        var n1 = Number(txt.value)
+        var n2 = Number(tx2.value)
+        
+        var s = n1 / n2
+        des.innerHTML = `A Divisão de ${n1} e ${n2} = ${s}`
+
+        }
+
+        function raiz() {
+
+        var n1 = Number(txt.value)
+        var n2 = Number(tx2.value)
+        var x = window.prompt('Raiz de que?')        
+        var s = n1 ** (1/x)
+        
+        des.innerHTML = `Raiz = ${s}`
+  
+        }
+
+        function stop() {
+            
+            var x = window.prompt('Digite: 1, pra ligar. Digite: 0, pra mater desligada!')
+            
+            if(x == 1){
+
+                tx4.style.background = 'green'
+                des.innerHTML = 'calculadora ligada!'
+                
+            }else{
+
+                tx4.style.background = 'red'
+                des.innerHTML = `calculadora desligada!`
+
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
