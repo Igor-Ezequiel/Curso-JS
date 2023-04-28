@@ -1,34 +1,30 @@
 
-function fat (n) {
 
-    let fat = 1
-    for (let c = n; c > 1; c--) {
-        fat *= c
-    }
-    return fat
-
-}
+console.log(fatorial(5))
 
 
-var t = 0
-function fatorial(n) {
-    
-    if (n == 1) {
+function sequencia(n1) {
+
+    if (n1 == 0) {
 
         return 1
     
     } else {
 
+        if(n1 == 1) {
 
-        var n3 = n * fatorial(n-1)
+            return 2
 
-        return n3
-          
+        } else {
+
+            return (n1 - 1) + (n1 - 2)
+   
+        }
     }
 
 }
 
-console.log(fatorial(5))
+console.log(sequencia(5))
 
 
 
